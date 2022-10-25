@@ -7,7 +7,6 @@
     <groupId>com.ukraine.dc</groupId>
     <artifactId>httpserver</artifactId>
     <version>1.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>httpserver</name>
 
