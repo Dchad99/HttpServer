@@ -22,7 +22,8 @@
     <properties>
         <github.global.server>github</github.global.server>
         <github.maven-plugin>0.9</github.maven-plugin>
-        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
