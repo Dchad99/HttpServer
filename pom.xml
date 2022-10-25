@@ -45,7 +45,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Dchad99 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Dchad99/HttpServer</url>
+            <url>https://github.com/Dchad99/HttpServer</url>
         </repository>
     </distributionManagement>
 
