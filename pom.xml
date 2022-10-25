@@ -8,44 +8,13 @@
     <artifactId>httpserver</artifactId>
     <version>1.0.1</version>
 
-    <name>httpserver</name>
-
-    <description>
-        Simple web server, that read all static resources of the app.
-    </description>
-
-    <url>https://github.com/Dchad99/HttpServer</url>
-    <inceptionYear>2022</inceptionYear>
-
-    <developers>
-        <developer>
-            <name>David Chursa</name>
-            <email>chursa99192@gmail.com</email>
-            <roles>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:https://github.com/Dchad99/HttpServer.git</connection>
-        <developerConnection>scm:git:git@github.com:Dchad99/HttpServer.git</developerConnection>
-        <url>https://github.com/Dchad99/HttpServer/tree/master</url>
-        <tag>HEAD</tag>
-    </scm>
-
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub Dchad99 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Dchad99/HttpServer</url>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${project.build.directory}/mvn-repo</url>
         </repository>
     </distributionManagement>
-
-    <issueManagement>
-        <system>github</system>
-        <url>https://github.com/Dchad99/HttpServer/issues</url>
-    </issueManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -98,14 +67,38 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.1</version>
+                    <configuration>
+                        <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M7</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>3.0.0-M4</version>
+                    <groupId>com.github.github</groupId>
+                    <artifactId>site-maven-plugin</artifactId>
+                    <version>${github.maven-plugin}</version>
+                    <configuration>
+                        <message>Maven artifacts for ${project.version}</message>
+                        <noJekyll>true</noJekyll>
+                        <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                        <branch>refs/heads/mvn-repo</branch>
+                        <includes><include>**/*</include></includes>
+                        <repositoryName>mvn-repo</repositoryName>
+                        <repositoryOwner>Dchad99</repositoryOwner>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>site</goal>
+                            </goals>
+                            <phase>deploy</phase>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
