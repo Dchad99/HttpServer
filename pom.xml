@@ -21,14 +21,31 @@
         <developer>
             <name>David Chursa</name>
             <email>chursa99192@gmail.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
         </developer>
     </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/Dchad99/HttpServer.git</connection>
+        <developerConnection>scm:git:git@github.com:Dchad99/HttpServer.git</developerConnection>
+        <url>https://github.com/Dchad99/HttpServer/tree/master</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <distributionManagement>
         <repository>
             <id>github</id>
             <name>GitHub Dchad99 Apache Maven Packages</name>
-            <url>https://github.com/Dchad99/HttpServer</url>
+            <url>https://maven.pkg.github.com/Dchad99/HttpServer</url>
         </repository>
     </distributionManagement>
 
