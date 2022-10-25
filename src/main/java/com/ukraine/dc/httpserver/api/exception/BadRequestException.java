@@ -1,13 +1,10 @@
 package com.ukraine.dc.httpserver.api.exception;
 
-public class BadRequestException extends RuntimeException {
-    public BadRequestException() {
-    }
+import com.ukraine.dc.httpserver.api.model.StatusCode;
+
+public class BadRequestException extends HttpException {
 
     public BadRequestException(String message) {
-        super(message);
-    }
-
-    public BadRequestException(Throwable e) {
+        super(StatusCode.BAD_REQUEST, message);
     }
 }

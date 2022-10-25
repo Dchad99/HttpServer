@@ -1,14 +1,13 @@
 package com.ukraine.dc.httpserver.api.exception;
 
-public class ResourceNotFoundException extends RuntimeException {
-    public ResourceNotFoundException() {
-    }
+import com.ukraine.dc.httpserver.api.model.StatusCode;
 
-    public ResourceNotFoundException(Throwable cause) {
-        super(cause);
-    }
-
+public class ResourceNotFoundException extends HttpException {
     public ResourceNotFoundException(String message) {
-        super(message);
+        super(StatusCode.NOT_FOUND, message);
+    }
+
+    public ResourceNotFoundException() {
+        super(StatusCode.NOT_FOUND, StatusCode.NOT_FOUND.getMessage());
     }
 }

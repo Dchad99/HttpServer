@@ -1,14 +1,10 @@
 package com.ukraine.dc.httpserver.api.exception;
 
-public class InternalServerErrorException extends RuntimeException {
-    public InternalServerErrorException() {
-    }
+import com.ukraine.dc.httpserver.api.model.StatusCode;
+
+public class InternalServerErrorException extends HttpException {
 
     public InternalServerErrorException(String message) {
-        super(message);
-    }
-
-    public InternalServerErrorException(String message, Throwable cause) {
-        super(message, cause);
+        super(StatusCode.INTERNAL_SERVER_ERROR, message);
     }
 }
