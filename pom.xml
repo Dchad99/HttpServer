@@ -7,6 +7,36 @@
     <groupId>com.ukraine.dc</groupId>
     <artifactId>httpserver</artifactId>
     <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>httpserver</name>
+
+    <description>
+        Simple web server, that read all static resources of the app.
+    </description>
+
+    <url>https://github.com/Dchad99/HttpServer</url>
+    <inceptionYear>2022</inceptionYear>
+
+    <developers>
+        <developer>
+            <name>David Chursa</name>
+            <email>chursa99192@gmail.com</email>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub DRC</name>
+            <url>https://github.com/Dchad99/HttpServer</url>
+        </repository>
+    </distributionManagement>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/Dchad99/HttpServer/issues</url>
+    </issueManagement>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -44,6 +74,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 
     <build>
         <pluginManagement>
