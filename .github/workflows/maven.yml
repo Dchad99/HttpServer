@@ -11,8 +11,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
-          server_id: github
-          server-username: Dchad99
-          server-password: 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
       - name: Build with Maven
-        run: mvn clean package -DattachMuleSources -Pgithub deploy
+        run: mvn -B package --file pom.xml
