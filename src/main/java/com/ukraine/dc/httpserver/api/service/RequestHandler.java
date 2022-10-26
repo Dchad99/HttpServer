@@ -1,7 +1,6 @@
 package com.ukraine.dc.httpserver.api.service;
 
 import com.ukraine.dc.httpserver.api.exception.HttpException;
-import com.ukraine.dc.httpserver.api.model.HttpMethod;
 import com.ukraine.dc.httpserver.api.model.Response;
 import com.ukraine.dc.httpserver.api.model.StatusCode;
 import com.ukraine.dc.httpserver.api.service.parser.RequestParser;

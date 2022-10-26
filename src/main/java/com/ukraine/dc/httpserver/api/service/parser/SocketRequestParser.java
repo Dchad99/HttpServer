@@ -4,7 +4,6 @@ import com.ukraine.dc.httpserver.api.exception.InternalServerErrorException;
 import com.ukraine.dc.httpserver.api.exception.MethodNotAllowedException;
 import com.ukraine.dc.httpserver.api.model.HttpMethod;
 import com.ukraine.dc.httpserver.api.model.Request;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
